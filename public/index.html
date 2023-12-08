@@ -7,6 +7,28 @@
   <body>
     <div id="root"></div>
     <h1>Currency Exchanger</h1>
+    <h2>How much would you like to exchange?</h2>
+    <form id="exchangeForm">
+      <label for="amount">USD Amount:</label>
+      <input id="amount" type="number" name="amount" value="0">
+      <br>
+    <h2>Please exchange to:</h2>
+    <label for="currency">Select a Currency:</label>
+    <select name="currency" id="currency">
+      <option value="eur">Euro</option>
+      <option value="cad">Canadian Dollar</option>
+      <option value="mxn">Mexican Peso</option>
+      <option value="khr">Cambodian Riel</option>
+      <option value="nzd">New Zealand Dollar</option>
+      <option value="lego">Lego Bricks</option>
+    </select><br>
+    <br>
+    <button class="button" type="submit" value="submit">Exchange!</button>
+    </form>
+    <div id="results" class="hidden">
+
+
+    </div>
  
   </body>
 </html>
