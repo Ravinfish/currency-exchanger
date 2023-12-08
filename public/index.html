@@ -9,12 +9,22 @@
     <h1>Currency Exchanger</h1>
     <h2>How much would you like to exchange?</h2>
     <form id="exchangeForm">
-      <label for="amount">USD Amount:</label>
-      <input id="amount" type="number" name="amount" value="0">
+      <label for="amount">Amount:</label>
+      <input id="amount" type="number" name="amount" value="1"><br>
       <br>
+      <label for="cur1">Select a Currency to exchange:</label>
+      <select name="cur1" id="cur1">
+        <option value="usd">US Dollar</option>
+        <option value="eur">Euro</option>
+        <option value="cad">Canadian Dollar</option>
+        <option value="mxn">Mexican Peso</option>
+        <option value="khr">Cambodian Riel</option>
+        <option value="nzd">New Zealand Dollar</option>
+      </select><br>
     <h2>Please exchange to:</h2>
-    <label for="currency">Select a Currency:</label>
-    <select name="currency" id="currency">
+    <label for="cur2">Select a Currency:</label>
+    <select name="cur2" id="cur2">
+      <option value="usd">US Dollar</option>
       <option value="eur">Euro</option>
       <option value="cad">Canadian Dollar</option>
       <option value="mxn">Mexican Peso</option>
