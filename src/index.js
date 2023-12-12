@@ -1,4 +1,4 @@
-import ConvertCurrency from './js/convert';
+import ConvertCurrency from './js/Convert';
 
 document.addEventListener('DOMContentLoaded', () => {
   const exchangeForm = document.getElementById('exchangeForm');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const result = await ConvertCurrency.convertCurrency(cur1, cur2, amount);
 
-    if (results.error) {
+    if (result.error) {
       resultsDiv.innerHTML = `<p>Error: ${result.error}</p>`;
     } else {
       resultsDiv.innerHTML = `
@@ -22,5 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     resultsDiv.classList.remove('hidden')
-  })
-})
+  });
+});
