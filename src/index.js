@@ -5,13 +5,15 @@ import ConvertCurrency from './js/ConvertCurrency.js';
 document.addEventListener("DOMContentLoaded", function () {
 async function handleExchangeForm(e) {
   e.preventDefault();
-  const cur1Value = document.getElementById("cur1");
-  const cur1 = cur1Value.value;
-  const cur1Name = cur1Value.options[cur1Value.selectedIndex].text;
-  const cur2Value = document.getElementById("cur2");
-  const cur2 = cur2Value.value;
-  const cur2Name = cur2Value.options[cur2Value.selectedIndex].text;
+  const cur1 = document.getElementById("cur1").value;
+  // const cur1 = cur1Value.value;
+  // const cur1Name = cur1Value.options[cur1Value.selectedIndex].text;
+  const cur2 = document.getElementById("cur2").value;
+  // const cur2 = cur2Value.value;
+  // const cur2Name = cur2Value.options[cur2Value.selectedIndex].text;
   const amount = document.getElementById("amount").value;
+
+  const converter = new ConvertCurrency();
   const { result, error } = await ConvertCurrency(cur1, cur2, amount);
   if (error) {
     const errorMessage = {
@@ -26,7 +28,7 @@ async function handleExchangeForm(e) {
     result.append(displayError);
   } else if (typeof result.conversion_result !== 'undefined') {
     const conversion = document.createElement("p");
-    conversion.innerHTML = `${amount} ${cur1Name} is equal to ${result.conversion_result} ${cur2Name}`;
+    conversion.innerHTML = `${amount} ${cur1} is equal to ${result.conversion_result} ${cur2}`;
     const result = document.getElementById("result");
     result.innerHTML = "";
     result.removeAttribute("class");
