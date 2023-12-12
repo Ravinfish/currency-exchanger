@@ -8,9 +8,9 @@
     <div id="root"></div>
     <h1>Currency Exchanger</h1>
     <h2>How much would you like to exchange?</h2>
-    <form id="exchangeForm">
+    <form id="convertExchange">
       <label for="amount">Amount:</label>
-      <input id="amount" type="number" name="amount" value="1"><br>
+      <input id="amount" type="number" name="amount" placeholder="Enter Amount"><br>
       <br>
       <label for="cur1">Select a Currency to exchange:</label>
       <select name="cur1" id="cur1">
@@ -35,14 +35,9 @@
     <br>
     <button class="button" type="submit" value="submit">Exchange!</button>
     </form>
-    <div id="results" class="hidden">
 
-      <script>
-        function exchange() {
-          
-        }
-      </script>
-
+    <div id="result" class="hidden">
+           <div id="exchangeResults"></div>
 
     </div>
  
