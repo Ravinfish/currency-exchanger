@@ -14,7 +14,7 @@ async function handleExchangeForm(e) {
   const amount = document.getElementById("amount").value;
 
   const converter = new ConvertCurrency();
-  const { result, error } = await ConvertCurrency(cur1, cur2, amount);
+  const { result, error } = await ConvertCurrency.convertCurrency(cur1, cur2, amount);
   if (error) {
     const errorMessage = {
       message: 'An error occured during currency conversion.',
@@ -26,9 +26,9 @@ async function handleExchangeForm(e) {
     result.innerHTML = "";
     result.removeAttribute("class");
     result.append(displayError);
-  } else if (typeof result.conversion_result !== 'undefined') {
+  } else if (typeof result.converter_result !== 'undefined') {
     const conversion = document.createElement("p");
-    conversion.innerHTML = `${amount} ${cur1} is equal to ${result.conversion_result} ${cur2}`;
+    conversion.innerHTML = `${amount} ${cur1} is equal to ${result.coverter_result} ${cur2}`;
     const result = document.getElementById("result");
     result.innerHTML = "";
     result.removeAttribute("class");
