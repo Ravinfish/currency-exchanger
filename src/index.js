@@ -1,12 +1,16 @@
-import ConvertCurrency from './js/ConvertCurrency';
 import "./css/styles.css"
+import ConvertCurrency from './js/ConvertCurrency.js';
 
+
+document.addEventListener("DOMContentLoaded", function () {
 async function handleExchangeForm(e) {
   e.preventDefault();
-  const cur1 = document.getElementById("cur1").value;
-  const cur1Name = cur1.options[cur1.selectedIndex].text;
-  const cur2 = document.getElementById("cur2").value;
-  const cur2Name = cur2.options[cur2.selectedIndex].text;
+  const cur1Value = document.getElementById("cur1");
+  const cur1 = cur1Value.value;
+  const cur1Name = cur1Value.options[cur1Value.selectedIndex].text;
+  const cur2Value = document.getElementById("cur2");
+  const cur2 = cur2Value.value;
+  const cur2Name = cur2Value.options[cur2Value.selectedIndex].text;
   const amount = document.getElementById("amount").value;
   const { result, error } = await ConvertCurrency(cur1, cur2, amount);
   if (error) {
@@ -38,7 +42,7 @@ async function handleExchangeForm(e) {
 }
 
 document.getElementById("convertExchange").addEventListener("submit", handleExchangeForm);
-
+});
 // document.addEventListener('DOMContentLoaded', () => {
 //   const exchangeForm = document.getElementById('exchangeForm');
 //   const resultDiv = document.getElementById('result');
